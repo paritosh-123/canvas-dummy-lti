@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root to: 'panda_pal/lti#launch'
+  mount PandaPal::Engine, at: '/lti'
+  
+  lti_nav account_navigation: 'launch#account'
 end
